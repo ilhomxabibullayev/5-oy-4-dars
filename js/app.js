@@ -6,8 +6,8 @@ function testScope() {
 testScope();
 console.log("Outside function:", x);
 
-/* Tashqi doira: let x = 10; qatorida x o'zgaruvchisi 10 ga teng bo'lib e'lon qilingan. Bu tashqi doira (global scope) deb ataladi.
-Ichki doira: testScope funksiyasida let x = 20; deb e'lon qilingan x o'zgaruvchisi faqat funksiya ichida mavjud. Bu o'zgaruvchi faqat funktsiya bajarilayotgan paytda mavjud va u tashqi doira bilan bog'lanmaydi. */
+/* let x = 10; qatorida x o'zgaruvchisi 10 ga teng bo'lib e'lon qilingan. Bu tashqi doira (global scope) deb ataladi.
+testScope funksiyasida let x = 20; deb e'lon qilingan x o'zgaruvchisi faqat funksiya ichida mavjud. Bu o'zgaruvchi faqat funktsiya bajarilayotgan paytda mavjud va u tashqi doira bilan bog'lanmaydi. */
 
 {
     let blockLet = "I am block scoped";
@@ -16,8 +16,8 @@ Ichki doira: testScope funksiyasida let x = 20; deb e'lon qilingan x o'zgaruvchi
 console.log(blockLet);
 console.log(blockVar);
 
-/* Block scope (blok doira): let blockLet = "I am block scoped"; qatori blockLet o'zgaruvchisini yaratadi va u faqat blok ichida mavjud. Blok ( { ... } )dan chiqqandan so'ng, bu o'zgaruvchiga murojaat qilish mumkin emas.
-Function/global scope: var blockVar = "I am function/global scoped"; qatori blockVar o'zgaruvchisini yaratadi. var bilan e'lon qilingan o'zgaruvchilar funksional yoki global doirada mavjud bo'ladi, shuning uchun bu o'zgaruvchi blokdan tashqarida ham mavjud. */
+/* let blockLet = "I am block scoped"; qatori blockLet o'zgaruvchisini yaratadi va u faqat blok ichida mavjud. Blok ( { ... } )dan chiqqandan so'ng, bu o'zgaruvchiga murojaat qilish mumkin emas.
+var blockVar = "I am function/global scoped"; qatori blockVar o'zgaruvchisini yaratadi. var bilan e'lon qilingan o'zgaruvchilar funksional yoki global doirada mavjud bo'ladi, shuning uchun bu o'zgaruvchi blokdan tashqarida ham mavjud. */
 
 function outer() {
     let outerVar = "I'm from the outer function";
@@ -44,10 +44,10 @@ function scopeTest() {
 scopeTest();
 
 /* var bilan e'lon qilingan o'zgaruvchi funcVar funksiya doirasida mavjud. Shuning uchun, if bloki ichida e'lon qilingan bo'lsa ham, bu o'zgaruvchi funksiya tugaganidan keyin ham mavjud bo'ladi.
-console.log(funcVar); qatori "I'm function scoped" ni chop etadi. */
+qatori "I'm function scoped" ni chop etadi. */
 
 /* let bilan e'lon qilingan o'zgaruvchi blockLet faqat if blokida mavjud. Bu blokdan tashqarida bu o'zgaruvchiga murojaat qilish mumkin emas.
-console.log(blockLet); qatori "ReferenceError" xatosini beradi, chunki blockLet o'zgaruvchisi blok doirasidan tashqarida mavjud emas. */
+qatori "ReferenceError" xatosini beradi, chunki blockLet o'zgaruvchisi blok doirasidan tashqarida mavjud emas. */
 
 let name = "Global";
 function shadowingExample() {
